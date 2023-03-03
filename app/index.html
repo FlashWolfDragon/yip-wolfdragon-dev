@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.6.3.min.js"
+      integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
+      crossorigin="anonymous"
+    ></script>
+    <link rel="icon" href="./favicon/flashcom3.gif" type="image/gif" />
+
+    <script defer src="./app.js"></script>
+    <link rel="stylesheet" href="normalize.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Yip</title>
+  </head>
+  <body>
+    <p>My Id: <span class="myId"></span></p>
+    <p>Connected clients: <span class="numberOfConnections"></span></p>
+    <button>Yip</button>
+    <div class="myKoboldContainer">
+      <div class="myKobold"></div>
+    </div>
+
+    <div class="koboldContainerBottom">
+      <div class="connectedKobolds koboldGridBottom"></div>
+    </div>
+  </body>
+</html>

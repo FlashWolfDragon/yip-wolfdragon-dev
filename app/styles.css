@@ -1,0 +1,86 @@
+body {
+  margin: 0;
+  height: 100vh;
+  overflow-y: hidden;
+  background-color: #8ec5fc;
+  background-image: linear-gradient(62deg, #8ec5fc 0%, #e0c3fc 100%);
+  background: linear-gradient(224deg, #8ec5fc, #bab1ff);
+  background-size: 400% 400%;
+
+  -webkit-animation: AnimateGradientBackground 30s ease infinite;
+  -moz-animation: AnimateGradientBackground 30s ease infinite;
+  animation: AnimateGradientBackground 30s ease infinite;
+}
+
+@-webkit-keyframes AnimateGradientBackground {
+  0% {
+    background-position: 0% 99%;
+  }
+  50% {
+    background-position: 100% 2%;
+  }
+  100% {
+    background-position: 0% 99%;
+  }
+}
+@-moz-keyframes AnimateGradientBackground {
+  0% {
+    background-position: 0% 99%;
+  }
+  50% {
+    background-position: 100% 2%;
+  }
+  100% {
+    background-position: 0% 99%;
+  }
+}
+@keyframes AnimateGradientBackground {
+  0% {
+    background-position: 0% 99%;
+  }
+  50% {
+    background-position: 100% 2%;
+  }
+  100% {
+    background-position: 0% 99%;
+  }
+}
+
+.kobold {
+  max-height: 400px;
+  max-width: 400px;
+  transform: scaleX(-1);
+}
+
+.kobold img {
+  width: 100%;
+  height: 100%;
+}
+
+.myKoboldContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.myKobold {
+  max-height: 400px;
+  max-width: 400px;
+  border: 1rem solid black;
+}
+
+.myKobold img {
+  width: 100%;
+  height: 100%;
+}
+
+.koboldContainerBottom {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+}
+
+.koboldGridBottom {
+  display: grid;
+  grid-template-columns: repeat(100, auto);
+}
