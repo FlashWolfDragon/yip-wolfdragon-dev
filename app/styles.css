@@ -2,6 +2,7 @@ body {
   margin: 0;
   height: 100vh;
   overflow-y: hidden;
+  font-family: "Orbitron", sans-serif;
   background-color: #8ec5fc;
   background-image: linear-gradient(62deg, #8ec5fc 0%, #e0c3fc 100%);
   background: linear-gradient(224deg, #8ec5fc, #bab1ff);
@@ -46,32 +47,89 @@ body {
   }
 }
 
+.volume {
+  display: flex;
+  width: 100%;
+  justify-content: end;
+}
+
+.volume img {
+  width: 2rem;
+  height: 2rem;
+  margin: 0.5rem;
+  content: url("./img/volume-high-solid.svg");
+}
+
+.volume.muted img {
+  content: url("./img/volume-xmark-solid.svg");
+}
+
+.yipCounter {
+  display: flex;
+  font-size: 150pt;
+  padding: 5rem;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+}
+
+.main {
+  display: grid;
+  width: 100vw;
+  height: 50vh;
+  grid-template-columns: 50% 50%;
+}
+
+@media screen and (max-width: 600px) {
+  .main {
+    grid-template-columns: 100%;
+  }
+
+  .yipCounter {
+    padding-bottom: 0.5rem;
+  }
+
+  .myKoboldContainer {
+    justify-content: center;
+    min-width: 10rem;
+    min-height: 10rem;
+  }
+}
+
 .kobold {
-  max-height: 400px;
-  max-width: 400px;
-  transform: scaleX(-1);
+  max-height: 25rem;
+  max-width: 25rem;
+  transform: scaleX(-1) translateY(10px);
 }
 
 .kobold img {
   width: 100%;
   height: 100%;
+  filter: brightness(65%);
 }
 
 .myKoboldContainer {
   display: flex;
-  justify-content: center;
+  min-width: 25rem;
+  min-height: 25rem;
+  margin: 2rem;
+  justify-content: start;
   align-items: center;
+  user-select: none;
 }
 
 .myKobold {
-  max-height: 400px;
-  max-width: 400px;
-  border: 1rem solid black;
+  max-height: 25rem;
+  max-width: 25rem;
+  border-radius: 2rem;
+  border: 1rem solid #111111;
+  overflow: hidden;
 }
 
 .myKobold img {
   width: 100%;
   height: 100%;
+  transform: translateY(10px);
 }
 
 .koboldContainerBottom {
@@ -83,4 +141,58 @@ body {
 .koboldGridBottom {
   display: grid;
   grid-template-columns: repeat(100, auto);
+}
+
+.red img {
+  content: url("./img/red-closed.png");
+}
+
+.red.speaking img {
+  content: url("./img/red-open.png");
+}
+
+.blue img {
+  content: url("./img/blue-closed.png");
+}
+
+.blue.speaking img {
+  content: url("./img/blue-open.png");
+}
+
+.green img {
+  content: url("./img/green-closed.png");
+}
+
+.green.speaking img {
+  content: url("./img/green-open.png");
+}
+
+.purple img {
+  content: url("./img/purple-closed.png");
+}
+
+.purple.speaking img {
+  content: url("./img/purple-open.png");
+}
+
+.speaking img {
+  position: relative;
+  animation-name: speak-now;
+  animation-duration: 0.3s;
+  animation-fill-mode: forwards;
+  filter: brightness(100%);
+}
+
+@keyframes speak-now {
+  0% {
+    bottom: 0px;
+  }
+
+  50% {
+    bottom: 10px;
+  }
+
+  100% {
+    bottom: 0px;
+  }
 }

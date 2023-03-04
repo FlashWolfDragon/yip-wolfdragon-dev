@@ -1,4 +1,5 @@
 const path = require("path");
+const fs = require("fs");
 const express = require("express");
 const socketIO = require("socket.io");
 
@@ -16,13 +17,20 @@ const io = socketIO(server, {
 // schema: { id: client id, color: assigned color }
 clientsConnected = [];
 const possibleColors = ["red", "blue", "green", "purple"];
+let yipCount = 0;
+
+function addYip() {
+  yipCount++;
+}
 
 // On new connection
 io.on("connection", (socket) => {
   console.log(`User connected with id ${socket.id}`);
-  
+  io.emit("updateYipCount", yipCount);
+
   // Assign a random color to new client
-  const assignedColor = possibleColors[Math.floor(Math.random() * possibleColors.length)];
+  const assignedColor =
+    possibleColors[Math.floor(Math.random() * possibleColors.length)];
   const clientObject = {
     id: socket.id,
     color: assignedColor,
@@ -34,6 +42,7 @@ io.on("connection", (socket) => {
   io.to(socket.id).emit("connectionInfo", {
     connectedClients: clientsConnected,
     color: clientObject.color,
+    yipCount,
   });
 
   // Let everyone know that a client connected and their info
@@ -43,7 +52,9 @@ io.on("connection", (socket) => {
   // Handle button presses
   socket.on("yip", (id) => {
     console.log(`Recieved Yip from ${id}`);
+    addYip();
     socket.broadcast.emit("yip", socket.id);
+    io.emit("updateYipCount", yipCount);
   });
 
   // Handle client disconnecting

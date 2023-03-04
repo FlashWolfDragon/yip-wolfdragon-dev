@@ -11,22 +11,45 @@
       crossorigin="anonymous"
     ></script>
     <link rel="icon" href="./favicon/flashcom3.gif" type="image/gif" />
-
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap"
+      rel="stylesheet"
+    />
     <script defer src="./app.js"></script>
     <link rel="stylesheet" href="normalize.css" />
     <link rel="stylesheet" href="styles.css" />
     <title>Yip</title>
   </head>
   <body>
-    <p>My Id: <span class="myId"></span></p>
-    <p>Connected clients: <span class="numberOfConnections"></span></p>
-    <button>Yip</button>
-    <div class="myKoboldContainer">
-      <div class="myKobold"></div>
+    <div class="volume">
+      <img /><audio class="yipSound" src="./sounds/yip1.mp3"></audio>
+    </div>
+
+    <div class="main">
+      <div class="yipCounter">10000</div>
+      <div class="myKoboldContainer">
+        <div class="myKobold">
+          <img class="myKoboldImg" />
+        </div>
+      </div>
     </div>
 
     <div class="koboldContainerBottom">
       <div class="connectedKobolds koboldGridBottom"></div>
+    </div>
+
+    <div class="preload">
+      <div></div>
+      <div style="content: url('./img/red-closed.png')"></div>
+      <div style="content: url('./img/red-open.png')"></div>
+      <div style="content: url('./img/blue-closed.png')"></div>
+      <div style="content: url('./img/blue-open.png')"></div>
+      <div style="content: url('./img/green-closed.png')"></div>
+      <div style="content: url('./img/green-open.png')"></div>
+      <div style="content: url('./img/purple-closed.png')"></div>
+      <div style="content: url('./img/purple-open.png')"></div>
     </div>
   </body>
 </html>
