@@ -1,4 +1,4 @@
-const socket = io("ws://localhost:8080");
+const socket = io("wss://yip.wolfdragon.dev");
 
 let kobold = { closed: "./img/Red-Closed.png", open: "./img/Red-Open.png" };
 let connectedKobolds = [{ id: "", div: "", active: false }];
